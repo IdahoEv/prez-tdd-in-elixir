@@ -56,19 +56,24 @@ export default class Presentation extends React.Component {
         <Deck transition={["zoom", "slide"]} transitionDuration={500}>
           <Slide transition={["zoom"]} bgColor="primary">
             <Heading size={1} fit caps lineHeight={1} textColor="black">
-              Spectacle
+              TDD In Elixir
             </Heading>
-            <Heading size={1} fit caps>
-              A ReactJS Presentation Library
+            <Heading size={2} fit caps textColor="white">
+              Santa Monica Elixir Meetup, 2016-11-2
             </Heading>
-            <Heading size={1} fit caps textColor="black">
-              Where You Can Write Your Decks In JSX
+            <Heading size={4} textColor="black">
+              Evan Dorn - @idahoev
             </Heading>
-            <Link href="https://github.com/FormidableLabs/spectacle">
-              <Text bold caps textColor="tertiary">View on Github</Text>
-            </Link>
-            <Text textSize="1.5em" margin="20px 0px 0px" bold>Hit Your Right Arrow To Begin!</Text>
+
+            <Heading size={4} textColor="black" margin="1em auto">
+              Slides and Code Examples:
+              <Link href="https://github.com/IdahoEv/prez-tdd-in-elixir">
+                <Text bold textColor="tertiary">https://github.com/IdahoEv/prez-tdd-in-elixir</Text>
+              </Link>
+            </Heading>
           </Slide>
+
+
           <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
             <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/>
             <Heading size={2} caps fit textColor="primary" textFont="primary">

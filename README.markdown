@@ -13,9 +13,12 @@ $> mix test
 
 ## Presentation slideshow
 
-Presentation is this repository, using Spectacle.  To run the slides from thi:
+Presentation is this repository, using Spectacle.  To run the slides from
+this directory:
 
 ```
 $> npm install
 $> npm start
 ```
+
+Open browser to localhost:3000
