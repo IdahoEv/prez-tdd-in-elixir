@@ -18,7 +18,7 @@ defmodule ExampleTest do
   end
 
 
-  function equals_four(arg) do
+  def equals_four(arg) do
     arg == 4
   end
 
