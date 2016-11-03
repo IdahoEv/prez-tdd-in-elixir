@@ -17,13 +17,16 @@ defmodule ExampleTest do
     assert { 2, _ } = foo   # match fails
   end
 
+  test "File.read returns OK" do
+    assert { :ok, _ } = File.read('mix.exs')
+  end
+
+  test "helper functions" do
+    assert equals_four(4)  # passes
+    assert equals_four(5)  # fails
+  end
 
   def equals_four(arg) do
     arg == 4
-  end
-
-  test "Custom matchers are just helper functions" do
-    assert equals_four(4)  # passes
-    assert equals_four(5)  # fails
   end
 end
