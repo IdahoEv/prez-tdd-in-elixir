@@ -123,7 +123,7 @@ export default class Presentation extends React.Component {
             lang="js"
             code={require("raw!../example/test/example_test.exs")}
             ranges={[
-              { loc: [0, 33], title: "Using setup" },
+              { loc: [0, 33], title: "Using ExUnit" },
               { loc: [1, 2], title: "Use ExUnit.case Behaviour"},
               { loc: [3, 6], title: "Assert Truthy Things" },
               { loc: [4, 5], title: "Assert Truthy Things" },
@@ -196,6 +196,40 @@ export default class Presentation extends React.Component {
               { loc: [3, 4] },
             ]}
           />
+
+          <Slide transition={["zoom"]} bgColor="secondary">
+            <Heading size={1} fit  lineHeight={1} textColor="white">
+              4. TESTING GenServers
+            </Heading>
+          </Slide>
+
+          <Slide transition={["slide"]}>
+            <Heading size={2} fit caps>GenServers are like Objects:</Heading>
+            <Appear><Heading size={2} fit lineHeight={2} textColor="white">They have internal state</Heading></Appear>
+            <Appear>
+               <Heading size={2} fit lineHeight={2}>You can <code>cast</code> to modify state</Heading>
+             </Appear>
+             <Appear>
+               <Text lineHeight={1}><i>(like a method w/o return)</i></Text>
+            </Appear>
+            <Appear>
+              <Heading size={2} fit lineHeight={2} textColor="white">You can <code>call</code> to get a response</Heading>
+            </Appear>
+            <Appear>
+              <Text textColor="white" lineHeight={1}><i>(like a method with a return)</i></Text>
+            </Appear>
+          </Slide>
+
+          <Slide transition={["slide"]}>
+            <Heading size={2} fit caps>But GenServer Handler functions are <u>pure</u></Heading>
+            <Appear><Heading size={2} fit lineHeight={2} textColor="white">They receive the full state</Heading></Appear>
+            <Appear>
+               <Heading size={2} fit lineHeight={2}>They return the new full state</Heading>
+             </Appear>
+             <Appear>
+               <Heading size={2} fit lineHeight={2} textColor="white"><i>So you don't actually need a GenServer to test them!</i></Heading>
+            </Appear>
+          </Slide>
 
           <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
             <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/>
