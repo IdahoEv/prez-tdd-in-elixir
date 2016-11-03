@@ -27,6 +27,8 @@ defmodule Example.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      { :ex_spec, "~> 2.0", only: :test }
+    ]
   end
 end

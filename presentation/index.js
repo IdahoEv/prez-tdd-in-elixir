@@ -152,7 +152,7 @@ export default class Presentation extends React.Component {
             <Heading size={2} caps fit>Want BDD Syntax?</Heading>
             <List>
               <Appear><ListItem>In mix.exs, add <code>ex_spec</code> </ListItem></Appear>
-              <Appear><ListItem><code>{'{'} :ex_spec, ">= 0.0.0", only: :test {'}'}</code></ListItem></Appear>
+              <Appear><ListItem><code>{'{'} :ex_spec, "~>2.0", only: :test {'}'}</code></ListItem></Appear>
               <Appear><ListItem>Gives you <code>describe</code> and <code>context</code></ListItem></Appear>
               <Appear><ListItem>And <code>it</code> as a synonym for <code>test</code></ListItem></Appear>
             </List>
@@ -231,106 +231,37 @@ export default class Presentation extends React.Component {
             </Appear>
           </Slide>
 
-          <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
-            <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/>
-            <Heading size={2} caps fit textColor="primary" textFont="primary">
-              Wait what?
-            </Heading>
-          </Slide>
+          <CodeSlide
+            transition={[]}
+            lang="js"
+            code={require("raw!../example/lib/sequence.ex")}
+            ranges={[
+              { loc: [0, 25], title: "A Simple GenServer" },
+              { loc: [0, 25] },
+              { loc: [4, 13] },
+              { loc: [13, 24] },
+              { loc: [15, 18] },
+              { loc: [19, 24] },
+              { loc: [22, 23] },
+            ]}
+          />
+
+          <CodeSlide
+            transition={[]}
+            lang="js"
+            code={require("raw!../example/test/sequence_test.exs")}
+            ranges={[
+              { loc: [0, 25], title: "Testing It!" },
+              { loc: [4, 12] },
+              { loc: [5, 10] },
+              { loc: [10, 11] },
+              { loc: [13, 21] },
+              { loc: [14, 19] },
+              { loc: [19, 20] },
+            ]}
+          />
 
 
-          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
-            <Appear fid="1">
-              <Heading size={1} caps fit textColor="primary">
-                Full Width
-              </Heading>
-            </Appear>
-            <Appear fid="2">
-              <Heading size={1} caps fit textColor="tertiary">
-                Adjustable Darkness
-              </Heading>
-            </Appear>
-            <Appear fid="3">
-              <Heading size={1} caps fit textColor="primary">
-                Background Imagery
-              </Heading>
-            </Appear>
-          </Slide>
-
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading caps fit>Flexible Layouts</Heading>
-            <Layout>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Left
-                </Heading>
-              </Fill>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Right
-                </Heading>
-              </Fill>
-            </Layout>
-          </Slide>
-
-
-          <Slide transition={["slide"]} bgColor="black">
-            <BlockQuote>
-              <Quote>Wonderfully formatted quotes</Quote>
-              <Cite>Ken Wheeler</Cite>
-            </BlockQuote>
-          </Slide>
-
-
-          <Slide transition={["spin", "zoom"]} bgColor="tertiary">
-            <Heading caps fit size={1} textColor="primary">
-              Inline Markdown
-            </Heading>
-            <Markdown>
-              {`
-![Markdown Logo](${images.markdown.replace("/", "")})
-
-You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-* Lists too!
-* With ~~strikethrough~~ and _italic_
-* And lets not forget **bold**
-              `}
-            </Markdown>
-          </Slide>
-
-
-          <Slide transition={["slide", "spin"]} bgColor="primary">
-            <Heading caps fit size={1} textColor="tertiary">
-              Smooth
-            </Heading>
-            <Heading caps fit size={1} textColor="secondary">
-              Combinable Transitions
-            </Heading>
-          </Slide>
-
-
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-            <List>
-              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit text</ListItem></Appear>
-              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-              <Appear><ListItem>React-Router navigation</ListItem></Appear>
-              <Appear><ListItem>PDF export</ListItem></Appear>
-              <Appear><ListItem>And...</ListItem></Appear>
-            </List>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="primary">
-            <Heading size={1} caps fit textColor="tertiary">
-              Your presentations are interactive
-            </Heading>
-            <Interactive/>
-          </Slide>
-          <Slide transition={["spin", "slide"]} bgColor="tertiary">
-            <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
-              Made with love in Seattle by
-            </Heading>
-            <Link href="http://www.formidablelabs.com"><Image width="100%" src={images.logo}/></Link>
-          </Slide>
         </Deck>
       </Spectacle>
     );
